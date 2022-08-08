@@ -1,0 +1,37 @@
+<body>
+  <div class="login-dark">
+    <nav class="navbar navbar-dark bg-primary">
+
+      <button class="btn btn-danger" style="float: left; margin-top: 6px; margin-left: 7px;"
+        (click)="back()">Back</button>
+
+      <h2 style="text-align: center; margin-top: 1%;color:whitesmoke;"><strong>Raise Dispute</strong></h2>
+
+      <button class="btn btn-danger" style="float: right; margin-top: 6px; margin-right: 7px;"
+        (click)="logout()">Logout</button>
+
+    </nav>
+    <div style="color:whitesmoke;margin-left: 45%; margin-top: 3%;">
+      <div>Challan Id: {{challan.challanId}}</div>
+      <div>Challan Date: {{challan.challanDate | date}}</div>
+      <div>Challan Time: {{challan.challanTime}}</div>
+      <div>Challan Location: {{challan.pincode}}</div>
+      <div>Violations: {{challan.violations}}</div>
+      <div>Total Fine: {{challan.totalFine}}</div>
+      <div>Due Date: {{challan.dueDate | date}}</div>
+    </div>
+    <div>
+      <div>
+        <form #loginForm="ngForm" class="form-group" (ngSubmit)="disputeSubmit(loginForm.value)" novalidate style="margin-top:5%">
+          <div class="sr-only">Dispute Message:</div>
+          <br>
+          <div class="form-group col-sm-4"><input class="form-control" type="text" name="disputeMessage"
+              placeholder="Message" ngModel #disputeMessage=ngModel required></div>
+          <br>
+          <div class="form-group"><button class="btn btn-primary" [disabled]="!loginForm.valid">Raise Dispute</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

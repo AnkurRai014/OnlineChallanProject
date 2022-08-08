@@ -1,0 +1,58 @@
+<div class="login-dark">
+  <div class="container" routerLink="/rto/reports">
+    <nav class="navbar navbar-dark bg-primary">
+
+      <button class="btn btn-danger" style="float: left; margin-top: 6px; margin-left: 7px;"
+        (click)="back()">Back</button>
+      <h2><b style="color: whitesmoke;">Report</b></h2>
+      <button class="btn btn-danger" style="float: right; margin-top: 6px; margin-right: 7px;"
+        (click)="logout()">Logout</button>
+
+    </nav>
+    <nav class="tab" data-selected="2">
+      <div class="icons">
+        <div data-index="1" class="icon fad fa-home"></div>
+        <div data-index="2" class="icon fal fa-plus"></div>
+        <div data-index="3" class="icon fad fa-user fa-swap-opacity"></div>
+      </div>
+      <div class="bar">
+        <div class="cap"></div>
+        <div class="middle">
+          <div class="side"></div>
+          <div class="circle"></div>
+          <div class="side"></div>
+        </div>
+        <div class="cap"></div>
+      </div>
+    </nav>
+    <form #loginForm="ngForm" class="form-group" novalidate>
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label" style="color: black;" ><b>Pincode</b></label>
+
+        <div class="col-12">
+          <select name="pincode" [(ngModel)]="challan.pincode">
+            <option *ngFor="let chal of challans" value="{{chal.pincode}}">{{chal.pincode}}</option>
+          </select>
+        </div>
+          <table class="table" >
+            <thead>
+              <tr >
+                <th scope="col" >Number of Challans</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">{{pincodeCount}}</th>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <input type="text" name="categoryId" [(ngModel)]="product.categoryId"> -->
+        </div>
+
+
+      <div class="form-group row" style="margin-left: 40%; margin-top: 4%; ">
+        <div class="col-sm-2"><button class="btn btn-sm btn-primary"  type="submit" style="border-radius: 10%; height: 2.5rem;" (click)="onSubmit(challan.pincode)">Submit</button></div>
+      </div>
+    </form>
+  </div>
+</div>

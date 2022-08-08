@@ -1,0 +1,43 @@
+<div class="login-dark">
+<div class="container" routerLink="owner/paidchallan">
+  <nav class="navbar navbar-dark bg-primary">
+
+    <button class="btn btn-danger" style="float: left; margin-top: 6px; margin-left: 7px;"
+      (click)="back()">Back</button>
+      <h2 style="margin-top: 2%; text-align: center;color: whitesmoke;"><strong>Paid Challan</strong></h2>
+
+    <button class="btn btn-danger" style="float: right; margin-top: 6px; margin-right: 7px;"
+      (click)="logout()">Logout</button>
+
+  </nav>
+
+
+  <div style="margin-top: 1%;">
+    <table class="table tabel-dark table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center;">Challan ID</th>
+          <th scope="col" style="text-align: center;">Challan Date</th>
+          <th scope="col" style="text-align: center;">Challan Time</th>
+          <th scope="col" style="text-align: center;">Location</th>
+          <th scope="col" style="text-align: center;">Image Proof</th>
+          <th scope="col" style="text-align: center;">Violations</th>
+          <th scope="col" style="text-align: center;">Total Fine</th>
+          <th scope="col" style="text-align: center;">Paid Date</th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center;">
+        <tr *ngFor="let tempchallan of challans">
+          <td>{{tempchallan.challanId}}</td>
+          <td>{{tempchallan.challanDate | date}}</td>
+          <td>{{tempchallan.challanTime}}</td>
+          <td>{{tempchallan.pincode}}</td>
+          <td><img src="{{tempchallan.imageProof}}" style="width:200px;height:100px"></td>
+          <td>{{tempchallan.violations}}</td>
+          <td>{{tempchallan.totalFine | currency: 'INR':true}}</td>
+          <td>{{tempchallan.paidDate | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

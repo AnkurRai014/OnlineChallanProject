@@ -1,0 +1,64 @@
+<body>
+  <div class="login-dark">
+    <nav class="navbar navbar-dark bg-primary">
+
+      <button class="btn btn-danger" style="float: left; margin-top: 6px; margin-left: 7px;"
+        (click)="back()">Back</button>
+        <h2 style="text-align: center; margin-top: 1%; color: whitesmoke;"><strong>Add Challan</strong></h2>
+      <button class="btn btn-danger" style="float: right; margin-top: 6px; margin-right: 7px;"
+        (click)="logout()">Logout</button>
+
+    </nav>
+
+    <form #challanData="ngForm" (ngSubmit)="onSubmit()" class="row g-3" style="margin-left: 1%; margin-top: 1%;">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="number plate" class="form-label">Vehicle number plate</label>
+          <input type="text" class="form-control" placeholder="PB35XXXX" name="vehiclePlateNumber" id="number plate"
+            [(ngModel)]="challan.vehiclePlateNumber" />
+        </div>
+
+        <div class="col-md-5">
+          <label for="challan date" class="form-label">Challan date</label>
+          <input type="date" class="form-control" name="challanDate" id="challan date"
+            [(ngModel)]="challan.challanDate" />
+        </div>
+        <div class="col-md-5">
+          <label for="challan time" class="form-label">Challan time</label>
+          <input type="time" class="form-control" name="challanTime" id="challan time"
+            [(ngModel)]="challan.challanTime" />
+        </div>
+        <div class="col-md-2">
+          <label for="pincode" class="form-label">Pincode</label>
+          <input type="text" class="form-control" placeholder="110023" name="pincode" id="pincode"
+            [(ngModel)]="challan.pincode" />
+        </div>
+        <div class="col-md-6">
+          <label for="violations" class="form-label">Violations</label>
+          <input type="text" class="form-control" placeholder="No Seatbelt" name="violations" id="violations"
+            [(ngModel)]="challan.violations" />
+        </div>
+        <div class="col-md-6">
+          <label for="imageproof" class="form-label">Proof of violation</label>
+          <input type="file" class="form-control" placeholder="proof of violations" name="imageProof" id="imageproof"
+            [(ngModel)]="challan.imageProof" />
+        </div>
+        <div class="col-md-6">
+          <label for="due date" class="form-label">Due date</label>
+          <input type="date" class="form-control" placeholder="due date" name="dueDate" id="due date"
+            [(ngModel)]="challan.dueDate" />
+        </div>
+        <div class="col-md-6">
+          <label for="violations" class="form-label">Total fine</label>
+          <input type="number" class="form-control" placeholder="Rs 10000/-" name="totalFine" id="total fine"
+            [(ngModel)]="challan.totalFine" />
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-xxl btn-primary" style="margin-left: 46%">
+          Create Challan
+        </button>
+      </div>
+    </form>
+  </div>
+</body>

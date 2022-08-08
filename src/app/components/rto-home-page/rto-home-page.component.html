@@ -1,0 +1,21 @@
+<div class="login-dark">
+<div routerLink="rto/homepage">
+<nav class="navbar navbar-dark bg-primary">
+
+    <div class="navbar-brand " style="margin-left: 35rem;"><b
+            style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: x-large;">Welcome {{policeOfficer.firstName}} {{policeOfficer.lastName}}</b></div>
+
+            <button class="btn btn-danger" style="float: right; margin-top: 6px; margin-right: 7px;"
+                  (click)="logout()">Logout</button>
+  </nav>
+</div>
+<div style="margin-top: 3%; margin-left:30%;" >
+    <button  class="btn btn-outline-primary"  (click)="newchallan()">New Challan</button>
+    &nbsp;&nbsp;
+    <button class="btn btn-outline-primary"  (click)="viewdisputes()">View Dispute</button>
+    &nbsp;&nbsp;
+    <button class="btn btn-outline-primary"  (click)="viewClosed()">Closed Challan</button>
+    &nbsp;&nbsp;
+    <button class="btn btn-outline-primary"  (click)="viewreports()">Reports</button>
+</div>
+</div>
